@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="regex.js"></script>
+        <style>
+            span {background-color: yellow;}
+            #regerror {color: red; display: none;}
+            #texterror {color: red; display: none;}
+            #resultpanel {display: none;}
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <h1>Regular Expression Assistant</h1>
+                <p><strong>Test your regular expressions!</strong></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">Parser</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="regex">Type your regular expression here:</label>
+                        <input class="form-control" id="regex" type="text" required minlength="1">
+                        <div id="regerror"><p>Please enter valid regex.</p></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Input text to test on below:</label>
+                        <textarea class="form-control" id="text">I love using regular expressions!</textarea>
+                        <div id="texterror"><p>Please provide text to test regex on.</p></div>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" onclick="highlight()">Parse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="resultpanel" class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">Result</div>
+                <div class="panel-body">
+                    <p>The result of parsing your regex on the provided input text:</p>
+                    <div class="well well-lg">
+                        <p id="result"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
